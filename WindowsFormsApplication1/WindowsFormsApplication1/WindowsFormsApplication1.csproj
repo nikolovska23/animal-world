@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08AA3D65-02DE-4DD9-97EF-EE4F9F1077FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>Animal World</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KeepAutomation.BarcodeReader, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dlls\KeepAutomation.BarcodeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dlls\WebCam_Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="EndGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EndGame.Designer.cs">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelChoose.Designer.cs">
+      <DependentUpon>LevelChoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scanner.cs" />
+    <Compile Include="WebCam.cs" />
+    <EmbeddedResource Include="EndGame.resx">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelChoose.resx">
+      <DependentUpon>LevelChoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dlls\KeepAutomation.BarcodeReader.dll" />
+    <Content Include="dlls\WebCam_Capture.dll" />
+    <Content Include="icon.ico" />
+    <Content Include="img\Background.jpg" />
+    <Content Include="img\Background_001.png" />
+    <Content Include="img\Bear_0.png" />
+    <Content Include="img\Bear_1.png" />
+    <Content Include="img\Bear_10.png" />
+    <Content Include="img\Bear_11.png" />
+    <Content Include="img\Bear_12.png" />
+    <Content Include="img\Bear_13.png" />
+    <Content Include="img\Bear_14.png" />
+    <Content Include="img\Bear_15.png" />
+    <Content Include="img\Bear_16.png" />
+    <Content Include="img\Bear_17.png" />
+    <Content Include="img\Bear_18.png" />
+    <Content Include="img\Bear_19.png" />
+    <Content Include="img\Bear_2.png" />
+    <Content Include="img\Bear_20.png" />
+    <Content Include="img\Bear_21.png" />
+    <Content Include="img\Bear_22.png" />
+    <Content Include="img\Bear_23.png" />
+    <Content Include="img\Bear_24.png" />
+    <Content Include="img\Bear_25.png" />
+    <Content Include="img\Bear_26.png" />
+    <Content Include="img\Bear_27.png" />
+    <Content Include="img\Bear_28.png" />
+    <Content Include="img\Bear_29.png" />
+    <Content Include="img\Bear_3.png" />
+    <Content Include="img\Bear_4.png" />
+    <Content Include="img\Bear_5.png" />
+    <Content Include="img\Bear_6.png" />
+    <Content Include="img\Bear_7.png" />
+    <Content Include="img\Bear_8.png" />
+    <Content Include="img\Bear_9.png" />
+    <Content Include="img\bothText.png" />
+    <Content Include="img\Cat_0.png" />
+    <Content Include="img\Cat_1.png" />
+    <Content Include="img\Cat_10.png" />
+    <Content Include="img\Cat_11.png" />
+    <Content Include="img\Cat_12.png" />
+    <Content Include="img\Cat_13.png" />
+    <Content Include="img\Cat_14.png" />
+    <Content Include="img\Cat_15.png" />
+    <Content Include="img\Cat_16.png" />
+    <Content Include="img\Cat_17.png" />
+    <Content Include="img\Cat_18.png" />
+    <Content Include="img\Cat_19.png" />
+    <Content Include="img\Cat_2.png" />
+    <Content Include="img\Cat_20.png" />
+    <Content Include="img\Cat_21.png" />
+    <Content Include="img\Cat_22.png" />
+    <Content Include="img\Cat_23.png" />
+    <Content Include="img\Cat_24.png" />
+    <Content Include="img\Cat_25.png" />
+    <Content Include="img\Cat_26.png" />
+    <Content Include="img\Cat_27.png" />
+    <Content Include="img\Cat_28.png" />
+    <Content Include="img\Cat_29.png" />
+    <Content Include="img\Cat_3.png" />
+    <Content Include="img\Cat_4.png" />
+    <Content Include="img\Cat_5.png" />
+    <Content Include="img\Cat_6.png" />
+    <Content Include="img\Cat_7.png" />
+    <Content Include="img\Cat_8.png" />
+    <Content Include="img\Cat_9.png" />
+    <Content Include="img\correct.png" />
+    <None Include="img\correctText.png" />
+    <Content Include="img\Cow_0.png" />
+    <Content Include="img\Cow_1.png" />
+    <Content Include="img\Cow_10.png" />
+    <Content Include="img\Cow_11.png" />
+    <Content Include="img\Cow_12.png" />
+    <Content Include="img\Cow_13.png" />
+    <Content Include="img\Cow_14.png" />
+    <Content Include="img\Cow_15.png" />
+    <Content Include="img\Cow_16.png" />
+    <Content Include="img\Cow_17.png" />
+    <Content Include="img\Cow_18.png" />
+    <Content Include="img\Cow_19.png" />
+    <Content Include="img\Cow_2.png" />
+    <Content Include="img\Cow_20.png" />
+    <Content Include="img\Cow_21.png" />
+    <Content Include="img\Cow_22.png" />
+    <Content Include="img\Cow_23.png" />
+    <Content Include="img\Cow_24.png" />
+    <Content Include="img\Cow_25.png" />
+    <Content Include="img\Cow_26.png" />
+    <Content Include="img\Cow_27.png" />
+    <Content Include="img\Cow_28.png" />
+    <Content Include="img\Cow_29.png" />
+    <Content Include="img\Cow_3.png" />
+    <Content Include="img\Cow_4.png" />
+    <Content Include="img\Cow_5.png" />
+    <Content Include="img\Cow_6.png" />
+    <Content Include="img\Cow_7.png" />
+    <Content Include="img\Cow_8.png" />
+    <Content Include="img\Cow_9.png" />
+    <Content Include="img\cText.png" />
+    <Content Include="img\Dog_0.png" />
+    <Content Include="img\Dog_1.png" />
+    <Content Include="img\Dog_10.png" />
+    <Content Include="img\Dog_11.png" />
+    <Content Include="img\Dog_12.png" />
+    <Content Include="img\Dog_13.png" />
+    <Content Include="img\Dog_14.png" />
+    <Content Include="img\Dog_15.png" />
+    <Content Include="img\Dog_16.png" />
+    <Content Include="img\Dog_17.png" />
+    <Content Include="img\Dog_18.png" />
+    <Content Include="img\Dog_19.png" />
+    <Content Include="img\Dog_2.png" />
+    <Content Include="img\Dog_20.png" />
+    <Content Include="img\Dog_21.png" />
+    <Content Include="img\Dog_22.png" />
+    <Content Include="img\Dog_23.png" />
+    <Content Include="img\Dog_24.png" />
+    <Content Include="img\Dog_25.png" />
+    <Content Include="img\Dog_26.png" />
+    <Content Include="img\Dog_27.png" />
+    <Content Include="img\Dog_28.png" />
+    <Content Include="img\Dog_29.png" />
+    <Content Include="img\Dog_3.png" />
+    <Content Include="img\Dog_4.png" />
+    <Content Include="img\Dog_5.png" />
+    <Content Include="img\Dog_6.png" />
+    <Content Include="img\Dog_7.png" />
+    <Content Include="img\Dog_8.png" />
+    <Content Include="img\Dog_9.png" />
+    <Content Include="img\Elephant_0.png" />
+    <Content Include="img\Elephant_1.png" />
+    <Content Include="img\Elephant_10.png" />
+    <Content Include="img\Elephant_11.png" />
+    <Content Include="img\Elephant_12.png" />
+    <Content Include="img\Elephant_13.png" />
+    <Content Include="img\Elephant_14.png" />
+    <Content Include="img\Elephant_15.png" />
+    <Content Include="img\Elephant_16.png" />
+    <Content Include="img\Elephant_17.png" />
+    <Content Include="img\Elephant_18.png" />
+    <Content Include="img\Elephant_19.png" />
+    <Content Include="img\Elephant_2.png" />
+    <Content Include="img\Elephant_20.png" />
+    <Content Include="img\Elephant_21.png" />
+    <Content Include="img\Elephant_22.png" />
+    <Content Include="img\Elephant_23.png" />
+    <Content Include="img\Elephant_24.png" />
+    <Content Include="img\Elephant_25.png" />
+    <Content Include="img\Elephant_26.png" />
+    <Content Include="img\Elephant_27.png" />
+    <Content Include="img\Elephant_28.png" />
+    <Content Include="img\Elephant_29.png" />
+    <Content Include="img\Elephant_3.png" />
+    <Content Include="img\Elephant_4.png" />
+    <Content Include="img\Elephant_5.png" />
+    <Content Include="img\Elephant_6.png" />
+    <Content Include="img\Elephant_7.png" />
+    <Content Include="img\Elephant_8.png" />
+    <Content Include="img\Elephant_9.png" />
+    <Content Include="img\exit.png" />
+    <Content Include="img\Frame_Wood_Leaves.png" />
+    <None Include="img\Frame_Wood_Leaves_1.png" />
+    <Content Include="img\Giraffe_0.png" />
+    <Content Include="img\Giraffe_1.png" />
+    <Content Include="img\Giraffe_10.png" />
+    <Content Include="img\Giraffe_11.png" />
+    <Content Include="img\Giraffe_12.png" />
+    <Content Include="img\Giraffe_13.png" />
+    <Content Include="img\Giraffe_14.png" />
+    <Content Include="img\Giraffe_15.png" />
+    <Content Include="img\Giraffe_16.png" />
+    <Content Include="img\Giraffe_17.png" />
+    <Content Include="img\Giraffe_18.png" />
+    <Content Include="img\Giraffe_19.png" />
+    <Content Include="img\Giraffe_2.png" />
+    <Content Include="img\Giraffe_20.png" />
+    <Content Include="img\Giraffe_21.png" />
+    <Content Include="img\Giraffe_22.png" />
+    <Content Include="img\Giraffe_23.png" />
+    <Content Include="img\Giraffe_24.png" />
+    <Content Include="img\Giraffe_25.png" />
+    <Content Include="img\Giraffe_26.png" />
+    <Content Include="img\Giraffe_27.png" />
+    <Content Include="img\Giraffe_28.png" />
+    <Content Include="img\Giraffe_29.png" />
+    <Content Include="img\Giraffe_3.png" />
+    <Content Include="img\Giraffe_4.png" />
+    <Content Include="img\Giraffe_5.png" />
+    <Content Include="img\Giraffe_6.png" />
+    <Content Include="img\Giraffe_7.png" />
+    <Content Include="img\Giraffe_8.png" />
+    <Content Include="img\Giraffe_9.png" />
+    <Content Include="img\Goat_0.png" />
+    <Content Include="img\Goat_1.png" />
+    <Content Include="img\Goat_10.png" />
+    <Content Include="img\Goat_11.png" />
+    <Content Include="img\Goat_12.png" />
+    <Content Include="img\Goat_13.png" />
+    <Content Include="img\Goat_14.png" />
+    <Content Include="img\Goat_15.png" />
+    <Content Include="img\Goat_16.png" />
+    <Content Include="img\Goat_17.png" />
+    <Content Include="img\Goat_18.png" />
+    <Content Include="img\Goat_19.png" />
+    <Content Include="img\Goat_2.png" />
+    <Content Include="img\Goat_20.png" />
+    <Content Include="img\Goat_21.png" />
+    <Content Include="img\Goat_22.png" />
+    <Content Include="img\Goat_23.png" />
+    <Content Include="img\Goat_24.png" />
+    <Content Include="img\Goat_25.png" />
+    <Content Include="img\Goat_26.png" />
+    <Content Include="img\Goat_27.png" />
+    <Content Include="img\Goat_28.png" />
+    <Content Include="img\Goat_29.png" />
+    <Content Include="img\Goat_3.png" />
+    <Content Include="img\Goat_4.png" />
+    <Content Include="img\Goat_5.png" />
+    <Content Include="img\Goat_6.png" />
+    <Content Include="img\Goat_7.png" />
+    <Content Include="img\Goat_8.png" />
+    <Content Include="img\Goat_9.png" />
+    <Content Include="img\Horse_0.png" />
+    <Content Include="img\Horse_1.png" />
+    <Content Include="img\Horse_10.png" />
+    <Content Include="img\Horse_11.png" />
+    <Content Include="img\Horse_12.png" />
+    <Content Include="img\Horse_13.png" />
+    <Content Include="img\Horse_14.png" />
+    <Content Include="img\Horse_15.png" />
+    <Content Include="img\Horse_16.png" />
+    <Content Include="img\Horse_17.png" />
+    <Content Include="img\Horse_18.png" />
+    <Content Include="img\Horse_19.png" />
+    <Content Include="img\Horse_2.png" />
+    <Content Include="img\Horse_20.png" />
+    <Content Include="img\Horse_21.png" />
+    <Content Include="img\Horse_22.png" />
+    <Content Include="img\Horse_23.png" />
+    <Content Include="img\Horse_24.png" />
+    <Content Include="img\Horse_25.png" />
+    <Content Include="img\Horse_26.png" />
+    <Content Include="img\Horse_27.png" />
+    <Content Include="img\Horse_28.png" />
+    <Content Include="img\Horse_29.png" />
+    <Content Include="img\Horse_3.png" />
+    <Content Include="img\Horse_4.png" />
+    <Content Include="img\Horse_5.png" />
+    <Content Include="img\Horse_6.png" />
+    <Content Include="img\Horse_7.png" />
+    <Content Include="img\Horse_8.png" />
+    <Content Include="img\Horse_9.png" />
+    <Content Include="img\icon.ico" />
+    <Content Include="img\incorrect.png" />
+    <None Include="img\LevelTame.png" />
+    <None Include="img\LevelWild.png" />
+    <Content Include="img\LevelBoth.png" />
+    <Content Include="img\maxresdefault.png" />
+    <Content Include="img\maxresdefault2.png" />
+    <Content Include="img\Monkey_0.png" />
+    <Content Include="img\Monkey_1.png" />
+    <Content Include="img\Monkey_10.png" />
+    <Content Include="img\Monkey_11.png" />
+    <Content Include="img\Monkey_12.png" />
+    <Content Include="img\Monkey_13.png" />
+    <Content Include="img\Monkey_14.png" />
+    <Content Include="img\Monkey_15.png" />
+    <Content Include="img\Monkey_16.png" />
+    <Content Include="img\Monkey_17.png" />
+    <Content Include="img\Monkey_18.png" />
+    <Content Include="img\Monkey_19.png" />
+    <Content Include="img\Monkey_2.png" />
+    <Content Include="img\Monkey_20.png" />
+    <Content Include="img\Monkey_21.png" />
+    <Content Include="img\Monkey_22.png" />
+    <Content Include="img\Monkey_23.png" />
+    <Content Include="img\Monkey_24.png" />
+    <Content Include="img\Monkey_25.png" />
+    <Content Include="img\Monkey_26.png" />
+    <Content Include="img\Monkey_27.png" />
+    <Content Include="img\Monkey_28.png" />
+    <Content Include="img\Monkey_29.png" />
+    <Content Include="img\Monkey_3.png" />
+    <Content Include="img\Monkey_4.png" />
+    <Content Include="img\Monkey_5.png" />
+    <Content Include="img\Monkey_6.png" />
+    <Content Include="img\Monkey_7.png" />
+    <Content Include="img\Monkey_8.png" />
+    <Content Include="img\Monkey_9.png" />
+    <Content Include="img\ren.cpp" />
+    <Content Include="img\sad.png" />
+    <Content Include="img\smile.png" />
+    <Content Include="img\start.png" />
+    <Content Include="img\Wolf_0.png" />
+    <Content Include="img\Wolf_1.png" />
+    <Content Include="img\Wolf_10.png" />
+    <Content Include="img\Wolf_11.png" />
+    <Content Include="img\Wolf_12.png" />
+    <Content Include="img\Wolf_13.png" />
+    <Content Include="img\Wolf_14.png" />
+    <Content Include="img\Wolf_15.png" />
+    <Content Include="img\Wolf_16.png" />
+    <Content Include="img\Wolf_17.png" />
+    <Content Include="img\Wolf_18.png" />
+    <Content Include="img\Wolf_19.png" />
+    <Content Include="img\Wolf_2.png" />
+    <Content Include="img\Wolf_20.png" />
+    <Content Include="img\Wolf_21.png" />
+    <Content Include="img\Wolf_22.png" />
+    <Content Include="img\Wolf_23.png" />
+    <Content Include="img\Wolf_24.png" />
+    <Content Include="img\Wolf_25.png" />
+    <Content Include="img\Wolf_26.png" />
+    <Content Include="img\Wolf_27.png" />
+    <Content Include="img\Wolf_28.png" />
+    <Content Include="img\Wolf_29.png" />
+    <Content Include="img\Wolf_3.png" />
+    <Content Include="img\Wolf_4.png" />
+    <Content Include="img\Wolf_5.png" />
+    <Content Include="img\Wolf_6.png" />
+    <Content Include="img\Wolf_7.png" />
+    <Content Include="img\Wolf_8.png" />
+    <Content Include="img\Wolf_9.png" />
+    <None Include="img\wrongText.png" />
+    <None Include="Sounds\claps.wav" />
+    <Content Include="img\wText.png" />
+    <Content Include="Sounds\buzzer2.wav" />
+    <Content Include="Sounds\Goat_Sound.wav" />
+    <Content Include="Sounds\Cat_Sound.wav" />
+    <Content Include="Sounds\Cow_Sound.wav" />
+    <Content Include="Sounds\Dog_Sound.wav" />
+    <Content Include="Sounds\Elephant_Sound.wav" />
+    <Content Include="Sounds\Bear_Sound.wav" />
+    <Content Include="Sounds\Horse_Sound.wav" />
+    <Content Include="Sounds\Monkey_Sound.wav" />
+    <None Include="Sounds\Soundtrack.wav" />
+    <Content Include="Sounds\Wolf_Sound.wav" />
+    <Content Include="Sounds\Giraffe_Sound.wav" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
